@@ -1,0 +1,28 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20em;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn{
+    background-color: aqua;
+    width: 30px;
+    height: 30px;
+}
+.content{
+    margin: 7px auto;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    color: blueviolet;
+    
+}
+.btn:hover{
+    background-color: aquamarine;
+}
