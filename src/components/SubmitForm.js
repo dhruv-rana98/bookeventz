@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Route, Switch } from "react-router-dom";
 import ShippingInfo from "./ShippingInfo";
 import PaymentInfo from "./PaymentInfo";
+import FinalForm from "./FinalForm";
 const SubmitForm = () => {
   return (
     <div className="container">
@@ -42,7 +43,9 @@ const SubmitForm = () => {
         <Route path="/payment-info" exact>
           <PaymentInfo />
         </Route>
-        <Route path="/submit" exact></Route>
+        <Route path="/submit" exact>
+          <FinalForm />
+        </Route>
       </Switch>
     </div>
   );

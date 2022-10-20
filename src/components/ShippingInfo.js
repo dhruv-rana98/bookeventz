@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-
+import OrderContext from "../store/OrderContext";
 const ShippingInfo = () => {
   const nameRef = useRef();
   const addressRef = useRef();
@@ -9,6 +9,7 @@ const ShippingInfo = () => {
   const zipcodeRef = useRef();
   const [shippingInfo, setShippingInfo] = useState({});
   const history = useHistory();
+  const orderDetails = useContext(OrderContext);
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -18,7 +19,7 @@ const ShippingInfo = () => {
     const state = stateRef.current.value;
     const zipcode = zipcodeRef.current.value;
     const tempShippingInfo = { name, address, city, state, zipcode };
-
+    orderDetails.setShippingInfo(tempShippingInfo);
     setShippingInfo((prevInfo) => {
       return { ...prevInfo, ...tempShippingInfo };
     });

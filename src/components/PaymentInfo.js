@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./PaymentInfo.css";
-
+import OrderContext from "../store/OrderContext";
 const PaymentInfo = () => {
   const nameInputRef = useRef();
   const cardnumberInputRef = useRef();
@@ -9,6 +9,7 @@ const PaymentInfo = () => {
   const yearInputRef = useRef();
   const cvvInputRef = useRef();
   const history = useHistory();
+  const orderDetails = useContext(OrderContext);
   const [paymentInfo, setPaymentInfo] = useState({});
 
   const onSubmitHandler = (e) => {
@@ -20,7 +21,7 @@ const PaymentInfo = () => {
     const cvv = cvvInputRef.current.value;
 
     const tempPaymentInfo = { name, cardnumber, month, year, cvv };
-
+    orderDetails.setPaymentInfo(tempPaymentInfo);
     setPaymentInfo((prevInfo) => {
       return { ...prevInfo, ...tempPaymentInfo };
     });
@@ -140,6 +141,7 @@ const PaymentInfo = () => {
                         id="cvv"
                         ref={cvvInputRef}
                         type="text"
+                        maxLength="3"
                         required
                         placeholder="123"
                       />
@@ -152,7 +154,7 @@ const PaymentInfo = () => {
                   className="btn btn-sm btn-success float-right"
                   type="submit"
                 >
-                  <i className="mdi mdi-gamepad-circle"></i> Continue
+                  <i className="mdi mdi-gamepad-circle"></i> Save
                 </button>
                 <button className="btn btn-sm btn-danger" type="reset">
                   <i className="mdi mdi-lock-reset"></i> Reset
