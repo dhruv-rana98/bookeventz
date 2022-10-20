@@ -57,6 +57,7 @@ const PaymentInfo = () => {
                         type="text"
                         ref={nameInputRef}
                         placeholder="Enter your name"
+                        required
                       />
                     </div>
                   </div>
@@ -72,7 +73,9 @@ const PaymentInfo = () => {
                           className="form-control"
                           type="text"
                           ref={cardnumberInputRef}
+                          required
                           placeholder="0000 0000 0000 0000"
+                          maxLength="12"
                         />
                         <div className="input-group-append">
                           <span className="input-group-text">
@@ -91,6 +94,7 @@ const PaymentInfo = () => {
                       className="form-control"
                       id="ccmonth"
                       ref={monthInputRef}
+                      required
                     >
                       <option>1</option>
                       <option>2</option>
@@ -112,6 +116,7 @@ const PaymentInfo = () => {
                       className="form-control"
                       id="ccyear"
                       ref={yearInputRef}
+                      required
                     >
                       <option>2014</option>
                       <option>2015</option>
@@ -135,6 +140,7 @@ const PaymentInfo = () => {
                         id="cvv"
                         ref={cvvInputRef}
                         type="text"
+                        required
                         placeholder="123"
                       />
                     </div>
