@@ -3,6 +3,7 @@ import "./StarRating.css";
 const StarRating = (props) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  // const [reset, setReset] = useState(true);
   useEffect(() => {
     if (props.reset === true) {
       setRating(0);

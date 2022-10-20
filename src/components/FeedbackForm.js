@@ -10,6 +10,7 @@ const FeedbackForm = () => {
   const setRatingsHandler = (rating) => {
     setRatings(rating);
     console.log(rating);
+    setStarReset(false);
   };
   const onSubmitHandler = (e) => {
     e.preventDefault();
