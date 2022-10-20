@@ -12,7 +12,7 @@ const SubmitForm = () => {
             className="nav-link"
             activeClassName=" nav-link active"
             aria-current="page"
-            to="/shipping-info"
+            to="/submit-form/shipping-info"
           >
             Shipping Info
           </NavLink>
@@ -21,7 +21,7 @@ const SubmitForm = () => {
           <NavLink
             className="nav-link"
             activeClassName=" nav-link active"
-            to="/payment-info"
+            to="/submit-form/payment-info"
           >
             Payment Info
           </NavLink>
@@ -30,23 +30,21 @@ const SubmitForm = () => {
           <NavLink
             className="nav-link"
             activeClassName=" nav-link active"
-            to="/submit"
+            to="/submit-form/submit"
           >
             Submit
           </NavLink>
         </li>
       </ul>
-      <Switch>
-        <Route path="/shipping-info" exact>
-          <ShippingInfo />
-        </Route>
-        <Route path="/payment-info" exact>
-          <PaymentInfo />
-        </Route>
-        <Route path="/submit" exact>
-          <FinalForm />
-        </Route>
-      </Switch>
+      <Route path="/submit-form/shipping-info" exact>
+        <ShippingInfo />
+      </Route>
+      <Route path="/submit-form/payment-info" exact>
+        <PaymentInfo />
+      </Route>
+      <Route path="/submit-form/submit" exact>
+        <FinalForm />
+      </Route>
     </div>
   );
 };
