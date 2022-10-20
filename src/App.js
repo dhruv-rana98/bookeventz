@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import StateCounter from "./components/StateCounter";
 import FeedbackForm from "./components/FeedbackForm";
+import SubmitForm from "./components/SubmitForm";
 function App() {
   return (
     <div className="App">
@@ -19,8 +20,9 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <StateCounter />
-      <FeedbackForm />
+      {/* <StateCounter />
+      <FeedbackForm /> */}
+      <SubmitForm />
     </div>
   );
 }
