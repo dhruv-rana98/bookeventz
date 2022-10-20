@@ -31,7 +31,7 @@ const PaymentInfo = () => {
     monthInputRef.current.value = "";
     yearInputRef.current.value = "";
     cvvInputRef.current.value = "";
-    history.push("/submit");
+    history.push("/submit-form/submit");
   };
 
   useEffect(() => {

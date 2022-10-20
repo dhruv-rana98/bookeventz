@@ -7,6 +7,7 @@ const FeedbackForm = () => {
   const nameRef = useRef();
   const numberRef = useRef();
   const emailRef = useRef();
+  const [feedback, setFeedback] = useState({});
   const setRatingsHandler = (rating) => {
     setRatings(rating);
     console.log(rating);
@@ -18,8 +19,11 @@ const FeedbackForm = () => {
     const name = nameRef.current.value;
     const number = numberRef.current.value;
     const email = emailRef.current.value;
+    let feed = { ratings, review, name, number, email };
     console.log(ratings, review, name, number, email);
-
+    setFeedback((prev) => {
+      return { ...prev, ...feed };
+    });
     reviewRef.current.value = "";
     nameRef.current.value = "";
     numberRef.current.value = "";
@@ -76,6 +80,11 @@ const FeedbackForm = () => {
           Submit
         </button>
       </form>
+      <div>{feedback.ratings}</div>
+      <div>{feedback.review}</div>
+      <div>{feedback.name}</div>
+      <div>{feedback.number}</div>
+      <div>{feedback.email}</div>
     </div>
   );
 };

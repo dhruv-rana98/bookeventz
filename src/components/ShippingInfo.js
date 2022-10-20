@@ -23,7 +23,7 @@ const ShippingInfo = () => {
     setShippingInfo((prevInfo) => {
       return { ...prevInfo, ...tempShippingInfo };
     });
-    history.push("/payment-info");
+    history.push("/submit-form/payment-info");
     nameRef.current.value = "";
     addressRef.current.value = "";
     cityRef.current.value = "";
